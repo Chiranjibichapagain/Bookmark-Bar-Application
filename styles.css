@@ -15,7 +15,7 @@ main {
   width: 100vw;
   min-height: 8vh;
   background: white;
-  border-bottom: solid 0.07em rgb(0, 0, 0);
+  border-bottom: solid 0.07em rgb(29, 29, 29);
   display: flex;
   justify-content: center;
   align-items: center;
