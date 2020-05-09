@@ -64,6 +64,23 @@ main {
   background: rgb(231, 231, 231);
 }
 
+#suffle {
+  margin-top: 0.5%;
+  width: auto;
+  height: 32px;
+  border-radius: 0.4em;
+  border-style: none;
+  background: white;
+  font-size: 0.8em;
+  border: rgb(167, 15, 121) solid 0.05em;
+}
+
+#suffle:hover {
+  cursor: pointer;
+  background: rgb(167, 15, 121);
+  color: white;
+}
+
 #instruction {
   margin-bottom: 0.3em;
   color: red;

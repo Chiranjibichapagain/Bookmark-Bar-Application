@@ -1,5 +1,7 @@
 import { bookmarkData } from "./data.js";
 
+
+const copyArr=[...bookmarkData]
 const getInput = () => {
   clearData();
   const nameInput = document.getElementById("nameInput").value;
@@ -14,8 +16,8 @@ const getInput = () => {
     const newData = { name: "", webpage: "", image: "./assets/web.png" };
     newData.name = nameInput;
     newData.webpage = webInput;
+    copyArr.concat(newData)
     const newArr = data.concat(newData);
-    // console.log(newArr)
     document.getElementById("nameInput").value = "";
     document.getElementById("webInput").value = "";
 
@@ -52,6 +54,20 @@ bookmarkData.map((item) => {
   createBookmarks(item);
 });
 
+const rearrange = () => {
+  clearData();
+  const sortedArr = copyArr.sort(() => {
+    return 0.5 - Math.random();
+  });
+
+  sortedArr.map((item) => {
+    createBookmarks(item);
+  });
+};
+
+rearrange();
+
 // event handlers fro getting input data and submit
 
 document.getElementById("button").addEventListener("click", getInput);
+document.getElementById("suffle").addEventListener("click", rearrange);
