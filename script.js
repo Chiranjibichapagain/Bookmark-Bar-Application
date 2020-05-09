@@ -14,7 +14,7 @@ const getInput = () => {
 
     // creating a new object from data inserted form input
     const data = [...bookmarkData];
-    const newData = { name: "", webpage: "", image: "./assets/bbc.jpg" };
+    const newData = { name: "", webpage: "", image: "./Assets/xxx.png" };
     newData.name = nameInput;
     newData.webpage = webInput;
     copyArr.push(newData);
