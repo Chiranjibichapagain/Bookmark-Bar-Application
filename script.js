@@ -1,32 +1,38 @@
 import { bookmarkData } from "./data.js";
 
-
-const copyArr=[...bookmarkData]
+const copyArr = [...bookmarkData]; // an array to add a new obj that comes form the input, and to be used for rearranging items.
 const getInput = () => {
-  clearData();
+  clearData(); // to prevent adding new set of items while old exists in the UI, function is created below
+
   const nameInput = document.getElementById("nameInput").value;
   const webInput = document.getElementById("webInput").value;
 
+  // making sure that empty items will not be added, rather displays an error
   if (nameInput === "" || webInput === "") {
     document.getElementById("instruction").style.opacity = "100%";
   } else {
     document.getElementById("instruction").style.opacity = "0%";
 
+    // creating a new object from data inserted form input
     const data = [...bookmarkData];
     const newData = { name: "", webpage: "", image: "./assets/web.png" };
     newData.name = nameInput;
     newData.webpage = webInput;
-    copyArr.concat(newData)
+    copyArr.push(newData);
     const newArr = data.concat(newData);
+
+    // clearing up the input field
     document.getElementById("nameInput").value = "";
     document.getElementById("webInput").value = "";
 
+    // displaying the items via createBookmarks function
     newArr.map((item) => {
       createBookmarks(item);
     });
   }
 };
 
+// clearing up function
 function clearData() {
   document.querySelectorAll(".bookmarkItem").forEach(function (a) {
     a.remove();
@@ -54,6 +60,7 @@ bookmarkData.map((item) => {
   createBookmarks(item);
 });
 
+// rearranging function
 const rearrange = () => {
   clearData();
   const sortedArr = copyArr.sort(() => {
@@ -67,7 +74,6 @@ const rearrange = () => {
 
 rearrange();
 
-// event handlers fro getting input data and submit
-
+// event handlers fro getting input data and submit, and rearranging
 document.getElementById("button").addEventListener("click", getInput);
 document.getElementById("suffle").addEventListener("click", rearrange);

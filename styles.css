@@ -65,7 +65,7 @@ main {
 }
 
 #suffle {
-  margin-top: 0.5%;
+  margin: 0.5% 0%;
   width: auto;
   height: 32px;
   border-radius: 0.4em;
@@ -141,5 +141,6 @@ main {
   }
   .bookmarkItem {
     width: 300px;
+    border: rgba(150, 149, 150, 0.795) solid 0.05em;
   }
 }
