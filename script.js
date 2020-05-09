@@ -2,8 +2,6 @@ import { bookmarkData } from "./data.js";
 
 const copyArr = [...bookmarkData]; // an array to add a new obj that comes form the input, and to be used for rearranging items.
 const getInput = () => {
-  clearData(); // to prevent adding new set of items while old exists in the UI, function is created below
-
   const nameInput = document.getElementById("nameInput").value;
   const webInput = document.getElementById("webInput").value;
 
@@ -12,6 +10,7 @@ const getInput = () => {
     document.getElementById("instruction").style.opacity = "100%";
   } else {
     document.getElementById("instruction").style.opacity = "0%";
+    clearData(); // to prevent adding new set of items while old exists in the UI, function is created below
 
     // creating a new object from data inserted form input
     const data = [...bookmarkData];
