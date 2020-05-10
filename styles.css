@@ -113,6 +113,8 @@ main {
   border: rgb(167, 15, 121) solid 0.05em;
   margin-top: 0.5em;
   background: white;
+  text-align: center;
+  
 }
 
 #button:hover {
