@@ -27,7 +27,6 @@ const addBookmark = (name, link, createBookmark) => {
     image: "./assets/xxx.png",
   };
   copyArr = [...copyArr, newData];
-
   document.getElementById("name-input").value = "";
   document.getElementById("web-input").value = "";
 
