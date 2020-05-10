@@ -43,7 +43,6 @@ const addBookmark = (name, link, createBookmark) => {
   copyArr.map((item) => {
     createBookmark(item);
   });
-  return arr;
 };
 
 // To prevent adding new set of items while old exists in the UI.
