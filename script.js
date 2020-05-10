@@ -8,20 +8,24 @@ bookmarkData.map((item) => {
 let copyArr = [...bookmarkData]; // an array to add a new obj that comes form the input, and to be used for rearranging items.
 
 const getInput = () => {
-  const nameInput = document.getElementById("nameInput").value;
-  const webInput = document.getElementById("webInput").value;
-
+  const nameInput = document.getElementById("name-input").value;
+  const webInput = document.getElementById("web-input").value;
   // making sure that empty items will not be added, rather displays an error
-  if (nameInput === "" || webInput === "") {
-    document.getElementById("instruction").style.opacity = "100%";
-  } else {
-    addBookmark(copyArr, nameInput, webInput, createBookmarks)
-
-  }
+  nameInput === "" || webInput === ""
+    ? (document.getElementById("errorMessage").style.opacity = "100%")
+    : addBookmark(nameInput, webInput, createBookmarks);
 };
 
-const addBookmark = (arr, name, link, callback) => {
-  document.getElementById("instruction").style.opacity = "0%";
+console.log("copy arr,", copyArr);
+/**
+ *
+ * @param {1 array} arr Description: list of bookrmarks
+ * @param {2 string} name  Bookmark name
+ * @param {3 strng} link
+ * @param {4 callbackfunction} createBookmark
+ */
+const addBookmark = (name, link, createBookmark) => {
+  document.getElementById("errorMessage").style.opacity = "0%";
   clearData();
 
   // creating a new object from data inserted form input
@@ -30,13 +34,16 @@ const addBookmark = (arr, name, link, callback) => {
     webpage: link,
     image: "./assets/xxx.png",
   };
-  arr = [...arr, newData];
-  document.getElementById("nameInput").value = "";
-  document.getElementById("webInput").value = "";
 
-  arr.map((item) => {
-    callback(item);
+  copyArr = [...copyArr, newData];
+
+  document.getElementById("name-input").value = "";
+  document.getElementById("web-input").value = "";
+
+  copyArr.map((item) => {
+    createBookmark(item);
   });
+  return arr;
 };
 
 // To prevent adding new set of items while old exists in the UI.
