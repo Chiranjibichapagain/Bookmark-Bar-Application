@@ -13,12 +13,13 @@ main {
 }
 #bar {
   width: 100vw;
-  min-height: 8vh;
+  min-height: 7vh;
   background: white;
-  border-bottom: solid 0.07em rgb(29, 29, 29);
+  border-bottom: solid 0.05em rgb(63, 63, 63);
   display: flex;
   justify-content: center;
   align-items: center;
+  /* padding-left: 5%; */
 }
 
 #bookmarks {
@@ -35,9 +36,9 @@ main {
   align-items: center;
   background: rgb(255, 255, 255);
   width: auto;
-  height: 35px;
+  height: 22px;
   padding: 0% 1%;
-  margin: 1% 1.5% 0.5% 0%;
+  margin: 0% 1.5% 0.2% 0%;
   text-decoration: none;
   border-radius: 0.2em;
   overflow: hidden;
@@ -46,15 +47,16 @@ main {
 }
 
 .icon {
-  max-width: 60px;
-  max-height: 15px;
+  max-width: 50px;
+  max-height: 10px;
   margin: 3% 5%;
 }
 
 .pageName {
   font-weight: lighter;
-  color: rgb(41, 41, 41);
-  font-size: 1em;
+  color: rgb(63, 63, 63);
+  font-size: 0.8em;
+  margin: 0px;
 }
 
 .bookmarkItem:hover {
@@ -62,12 +64,12 @@ main {
 }
 
 #suffle {
-  margin: 0.5% 2%;
+  margin: 0% 5% 0% 2%;
   width: auto;
   height: 32px;
   border-style: none;
   background: white;
-  font-size: 1.5em;
+  font-size: 1em;
   font-weight: bolder;
 }
 
@@ -122,16 +124,17 @@ main {
 @media only screen and (max-width: 600px) {
   #bar {
     flex-direction: column;
+    padding-left: 0%;
   }
   .bookmarkItem {
     width: 500px;
     border-bottom: rgba(0, 0, 0, 0.452) solid 0.05em;
     border-radius: 0px;
+    height: 30px;
     justify-content: flex-start;
   }
 
-  #nameInput,
-  #webInput,
+  .input-field,
   #button {
     min-width: 90vw;
   }
